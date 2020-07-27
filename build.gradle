@@ -42,11 +42,16 @@ ext {
 }
 
 dependencies {
-    deobfCompile("org.valkyrienskies:Valkyrien-Skies:3c2c237c7b") {
+    deobfCompile("org.valkyrienskies:Valkyrien-Skies:ce259070:unshaded") {
         transitive = false
     }
 }
 
+jar {
+    manifest.attributes(
+            "FMLAT": "vs_world_at.cfg"
+    )
+}
 
 processResources {
     // this will ensure that this task is redone when the versions change.
