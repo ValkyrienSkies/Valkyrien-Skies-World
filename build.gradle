@@ -67,7 +67,9 @@ dependencies {
 shadowJar {
     classifier = null // No -all classifier
     configurations = [project.configurations.shade]
-    relocate 'kotlin', 'org.valkyrienskies.deps.kotlin'
+    relocate 'kotlin', 'org.valkyrienskies.addons.world.deps.kotlin'
+    relocate 'jetbrains', 'org.valkyrienskies.addons.world.deps.jetbrains'
+    relocate 'intellij', 'org.valkyrienskies.addons.world.deps.intellij'
     mergeServiceFiles() // https://github.com/johnrengelman/shadow/issues/304
 }
 
