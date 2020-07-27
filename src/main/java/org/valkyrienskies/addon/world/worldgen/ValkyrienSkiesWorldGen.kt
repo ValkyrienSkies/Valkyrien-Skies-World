@@ -14,7 +14,9 @@ import java.util.*
  * Created by joeyr on 4/18/2017.
  */
 class ValkyrienSkiesWorldGen : IWorldGenerator {
+
     var genValkyriumOre: WorldGenMinable? = null
+
     override fun generate(random: Random, chunkX: Int, chunkZ: Int, world: World,
                           chunkGenerator: IChunkGenerator, chunkProvider: IChunkProvider) {
         if (ValkyrienSkiesWorld.OREGEN_ENABLED) {
@@ -26,8 +28,10 @@ class ValkyrienSkiesWorldGen : IWorldGenerator {
                 0 -> runValkyriumGenerator(genValkyriumOre, world, random, chunkX, chunkZ, 2,
                         0, 25)
                 -1 -> {
+                    // nether
                 }
                 1 -> {
+                    // end
                 }
             }
         }
@@ -35,7 +39,10 @@ class ValkyrienSkiesWorldGen : IWorldGenerator {
 
     private fun runValkyriumGenerator(generator: WorldGenerator?, world: World, rand: Random,
                                       chunk_X: Int, chunk_Z: Int, chancesToSpawn: Int, minHeight: Int, maxHeight: Int) {
-        require(!(minHeight < 0 || maxHeight > 256 || minHeight > maxHeight)) { "Illegal Height Arguments for WorldGenerator" }
+        require(!(minHeight < 0 || maxHeight > 256 || minHeight > maxHeight)) {
+            "Illegal Height Arguments for WorldGenerator"
+        }
+
         val heightDiff = maxHeight - minHeight + 1
         for (i in 0 until chancesToSpawn) {
             val x = chunk_X * 16 + rand.nextInt(16)
