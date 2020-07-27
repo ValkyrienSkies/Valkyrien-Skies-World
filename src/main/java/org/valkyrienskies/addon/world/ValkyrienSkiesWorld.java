@@ -56,8 +56,8 @@ public class ValkyrienSkiesWorld {
     public static ValkyrienSkiesWorld INSTANCE;
 
     @SidedProxy(
-        clientSide = "org.valkyrienskies.addon.org.valkyrienskies.addon.world.proxy.ClientProxyWorld",
-        serverSide = "org.valkyrienskies.addon.org.valkyrienskies.addon.world.proxy.CommonProxyWorld")
+        clientSide = "org.valkyrienskies.addon.world.proxy.ClientProxyWorld",
+        serverSide = "orgvalkyrienskies.addon.world.proxy.CommonProxyWorld")
     private static CommonProxyWorld proxy;
 
     @CapabilityInject(ICapabilityAntiGravity.class)
