@@ -1,11 +1,11 @@
-Unless noted below, Minecraft Forge, Forge Mod Loader, and all 
+Unless noted below, Minecraft Forge, Forge Mod Loader, and all
 parts herein are licensed under the terms of the LGPL 2.1 found
-here http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt and 
+here http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt and
 copied below.
 
 Homepage: http://MinecraftForge.net/
           http://github.com/MinecraftForge/MinecraftForge
-          
+
 
 A note on authorship:
 All source artifacts are property of their original author, with
@@ -22,7 +22,7 @@ patch content to the Forge project.
 
 A note on infectivity:
 The LGPL is chosen specifically so that projects may depend on Forge
-features without being infected with its license. That is the 
+features without being infected with its license. That is the
 purpose of the LGPL. Mods and others using this code via ordinary
 Java mechanics for referencing libraries are specifically not bound
 by Forge's license for the Mod code.
@@ -59,7 +59,7 @@ authored by genman, heikok, pivot.
 The only changes are to replace some Trove collection types with standard Java collections, and repackaged.
 
 This software contains potions of Paulscodee IBXM library, a BSD liceensed library for
-loading and playing IBXM formated auto. No modifications havee beeen made. The associated 
+loading and playing IBXM formated auto. No modifications havee beeen made. The associated
 licenses can be found along side this one, or at
 https://github.com/MinecraftForge/MinecraftForge/blob/1.12.x/LICENSE-Paulscode%20IBXM%20Library.txt
 https://github.com/MinecraftForge/MinecraftForge/blob/1.12.x/LICENSE-Paulscode%20SoundSystem%20CodecIBXM.txt
@@ -524,3 +524,115 @@ SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGES.
 
                      END OF TERMS AND CONDITIONS
+
+-------
+
+IBXM is copyright (c) 2007, Martin Cameron, and is licensed under the BSD License.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+Neither the name of mumart nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-------
+
+SoundSystem CodecIBXM Class License:
+
+You are free to use this class for any purpose, commercial or otherwise.
+You may modify this class or source code, and distribute it any way you
+like, provided the following conditions are met:
+
+1) You may not falsely claim to be the author of this class or any
+   unmodified portion of it.
+2) You may not copyright this class or a modified version of it and then
+   sue me for copyright infringement.
+3) If you modify the source code, you must clearly document the changes
+   made before redistributing the modified source code, so other users know
+   it is not the original code.
+4) You are not required to give me credit for this class in any derived
+   work, but if you do, you must also mention my website:
+   http://www.paulscode.com
+5) I the author will not be responsible for any damages (physical,
+   financial, or otherwise) caused by the use if this class or any
+   portion of it.
+6) I the author do not guarantee, warrant, or make any representations,
+   either expressed or implied, regarding the use of this class or any
+   portion of it.
+
+Author: Paul Lamb
+http://www.paulscode.com
+
+
+This software is based on or using the IBXM library available from
+http://www.geocities.com/sunet2000/
+
+-------
+
+Minecraft Forge: Credits/Thank You
+
+Forge is a set of tools and modifications to the Minecraft base game code to assist
+mod developers in creating new and exciting content. It has been in development for
+several years now, but I would like to take this time thank a few people who have
+helped it along it's way.
+
+First, the people who originally created the Forge projects way back in Minecraft
+alpha. Eloraam of RedPower, and SpaceToad of Buildcraft, without their acceptiance
+of me taking over the project, who knows what Minecraft modding would be today.
+
+Secondly, someone who has worked with me, and developed some of the core features
+that allow modding to he as functional, and as simple as it is, cpw. For developing
+FML, which stabelized the client and server modding ecosystem. As well as the base
+loading system that allows us to modify Minecraft's code as elegently as possible.
+
+Mezz, who has stepped up as the issue and pull request manager. Helping to keep me
+sane as well as guiding the community into creating better additions to Forge.
+
+Searge, Bspks, Fesh0r, ProfMobious, and all the rest over on the MCP team {of which
+I am a part}. For creating some of the core tools needed to make Minecraft modding
+both possible, and as stable as can be.
+  On that note, here is some specific information of the MCP data we use:
+    * Minecraft Coder Pack (MCP) *
+      Forge Mod Loader and Minecraft Forge have permission to distribute and automatically
+      download components of MCP and distribute MCP data files. This permission is not
+      transitive and others wishing to redistribute the Minecraft Forge source independently
+      should seek permission of MCP or remove the MCP data files and request their users
+      to download MCP separately.
+
+And lastly, the countless community members who have spent time submitting bug reports,
+pull requests, and just helping out the community in general. Thank you.
+
+--LexManos
+
+=========================================================================
+
+This is Forge Mod Loader.
+
+You can find the source code at all times at https://github.com/MinecraftForge/MinecraftForge/tree/1.12.x/src/main/java/net/minecraftforge/fml
+
+This minecraft mod is a clean open source implementation of a mod loader for minecraft servers
+and minecraft clients.
+
+The code is authored by cpw.
+
+It began by partially implementing an API defined by the client side ModLoader, authored by Risugami.
+http://www.minecraftforum.net/topic/75440-
+This support has been dropped as of Minecraft release 1.7, as Risugami no longer maintains ModLoader.
+
+It also contains suggestions and hints and generous helpings of code from LexManos, author of MinecraftForge.
+http://www.minecraftforge.net/
+
+Additionally, it contains an implementation of topological sort based on that
+published at http://keithschwarz.com/interesting/code/?dir=topological-sort
+
+It also contains code from the Maven project for performing versioned dependency
+resolution. http://maven.apache.org/
+
+It also contains a partial repackaging of the javaxdelta library from http://sourceforge.net/projects/javaxdelta/
+with credit to it's authors.
+
+Forge Mod Loader downloads components from the Minecraft Coder Pack
+(http://mcp.ocean-labs.de/index.php/Main_Page) with kind permission from the MCP team.
+
