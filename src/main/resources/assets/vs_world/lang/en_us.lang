@@ -1,0 +1,9 @@
+potion.effect.levitation=Alazu's Wrath
+splash_potion.effect.levitation=Splash Alazu's Wrath
+lingering_potion.effect.levitation=Lingering Alazu's Wrath
+
+potion.effect.levitation-jump=Levitation Jump
+splash_potion.effect.levitation-jump=Splash Levitation Jump
+lingering_potion.effect.levitation-jump=Lingering Levitation Jump
+
+effect.levitation-jump=Levitation Jump

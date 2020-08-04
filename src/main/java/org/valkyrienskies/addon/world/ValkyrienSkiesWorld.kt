@@ -2,6 +2,8 @@ package org.valkyrienskies.addon.world
 
 import net.minecraft.block.Block
 import net.minecraft.item.Item
+import net.minecraft.potion.Potion
+import net.minecraft.potion.PotionType
 import net.minecraft.util.ResourceLocation
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.common.capabilities.Capability
@@ -48,7 +50,6 @@ class ValkyrienSkiesWorld {
                 EntityFallingUpBlock::class.java,
                 "fall_up_block_entity",
                 75, INSTANCE, 80, 1, true)
-        MinecraftForge.EVENT_BUS.register(worldEventsCommon)
         GameRegistry.registerWorldGenerator(ValkyrienSkiesWorldGen(), 1)
         proxy.init(event)
     }
@@ -91,7 +92,6 @@ class ValkyrienSkiesWorld {
         lateinit var ANTI_GRAVITY_CAPABILITY: Capability<ICapabilityAntiGravity>
 
         // MOD CLASS MEMBERS
-        private val worldEventsCommon = WorldEventsCommon()
         var OREGEN_ENABLED = true
 
         @SubscribeEvent
@@ -110,6 +110,18 @@ class ValkyrienSkiesWorld {
         fun registerItems(event: RegistryEvent.Register<Item?>) {
             INSTANCE.valkyriumCrystal = ItemValkyriumCrystal()
             event.registry.registerAll(*ITEMS.toTypedArray())
+        }
+
+        @SubscribeEvent
+        @JvmStatic
+        fun registerPotions(event: RegistryEvent.Register<Potion?>) {
+            PotionInit.registerPotions(event)
+        }
+
+        @SubscribeEvent
+        @JvmStatic
+        fun registerPotionTypes(event: RegistryEvent.Register<PotionType?>) {
+            PotionInit.registerPotionTypes(event)
         }
     }
 }

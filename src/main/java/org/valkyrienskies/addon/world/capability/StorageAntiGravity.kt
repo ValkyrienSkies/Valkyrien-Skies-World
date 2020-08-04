@@ -9,12 +9,12 @@ import net.minecraftforge.common.capabilities.Capability.IStorage
 class StorageAntiGravity : IStorage<ICapabilityAntiGravity> {
     override fun writeNBT(capability: Capability<ICapabilityAntiGravity>,
                           instance: ICapabilityAntiGravity,
-                          side: EnumFacing): NBTBase? {
+                          side: EnumFacing?): NBTBase? {
         return NBTTagDouble(instance.antiGravity)
     }
 
     override fun readNBT(capability: Capability<ICapabilityAntiGravity>,
-                         instance: ICapabilityAntiGravity, side: EnumFacing,
+                         instance: ICapabilityAntiGravity, side: EnumFacing?,
                          nbt: NBTBase) {
         val tagDouble = nbt as NBTTagDouble
         instance.antiGravity = tagDouble.double

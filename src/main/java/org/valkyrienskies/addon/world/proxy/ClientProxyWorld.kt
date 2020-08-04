@@ -6,16 +6,20 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.client.renderer.entity.RenderFallingBlock
 import net.minecraft.client.renderer.entity.RenderManager
 import net.minecraft.item.Item
+import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.fml.client.registry.RenderingRegistry
 import net.minecraftforge.fml.common.event.FMLStateEvent
 import org.valkyrienskies.addon.world.EntityFallingUpBlock
 import org.valkyrienskies.addon.world.ValkyrienSkiesWorld
+import org.valkyrienskies.addon.world.WorldEventsClient
 
 class ClientProxyWorld : CommonProxyWorld() {
+
     override fun preInit(e: FMLStateEvent) {
         super.preInit(e)
         RenderingRegistry
                 .registerEntityRenderingHandler(EntityFallingUpBlock::class.java) { RenderFallingBlock(it) }
+        MinecraftForge.EVENT_BUS.register(WorldEventsClient())
     }
 
     override fun init(e: FMLStateEvent) {
