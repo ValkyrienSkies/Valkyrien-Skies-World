@@ -5,7 +5,6 @@ import net.minecraft.item.Item
 import net.minecraft.potion.Potion
 import net.minecraft.potion.PotionType
 import net.minecraft.util.ResourceLocation
-import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.common.capabilities.Capability
 import net.minecraftforge.common.capabilities.CapabilityInject
 import net.minecraftforge.common.capabilities.CapabilityManager
@@ -20,8 +19,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 import net.minecraftforge.fml.common.registry.EntityRegistry
 import net.minecraftforge.fml.common.registry.GameRegistry
 import org.apache.logging.log4j.LogManager
-import org.valkyrienskies.addon.world.EntityFallingUpBlock
-import org.valkyrienskies.addon.world.ValkyrienSkiesWorld
 import org.valkyrienskies.addon.world.block.BlockValkyriumOre
 import org.valkyrienskies.addon.world.capability.ICapabilityAntiGravity
 import org.valkyrienskies.addon.world.capability.ImplCapabilityAntiGravity
@@ -44,7 +41,7 @@ class ValkyrienSkiesWorld {
     }
 
     @Mod.EventHandler
-    protected fun init(event: FMLInitializationEvent) {
+    private fun init(event: FMLInitializationEvent) {
         EntityRegistry.registerModEntity(
                 ResourceLocation(MOD_ID, "fall_up_block_entity"),
                 EntityFallingUpBlock::class.java,
