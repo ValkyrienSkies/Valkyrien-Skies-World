@@ -112,7 +112,7 @@ publishing {
 
             from components.java
             // Publish shadowjar
-            artifact shadowJar
+            artifact reobfShadowJar
             // Publish source jar
             artifact sourceJar {
                 classifier "sources"
