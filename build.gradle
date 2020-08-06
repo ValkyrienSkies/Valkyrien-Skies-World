@@ -29,7 +29,7 @@ ext {
 
     //dependency things
     forgelinVersion = "1.8.4"
-    vsVersion = "4ceb3621"
+    vsVersion = "1.0-1.12.2-SNAPSHOT"
 }
 
 version = "$vsWorldVersion-$minecraftVersion"
@@ -55,8 +55,8 @@ minecraft {
 
 repositories {
     maven {
-        name = "JitPack"
-        url = "https://jitpack.io"
+        name = "DaPorkchop_"
+        url = "https://maven.daporkchop.net/"
     }
     maven {
         name = "Shadowfacts"
@@ -67,9 +67,8 @@ repositories {
 
 dependencies {
     // The mod depends on Valkyrien Skies
-    deobfCompile("org.valkyrienskies:Valkyrien-Skies:$vsVersion") {
-        transitive = false
-    }
+    deobfCompile "org.valkyrienskies:valkyrien-skies:$vsVersion"
+    
     compile "net.shadowfacts:Forgelin:$forgelinVersion"
 }
 
