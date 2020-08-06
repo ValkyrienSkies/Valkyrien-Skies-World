@@ -111,9 +111,6 @@ publishing {
             version = project.version
 
             from components.java
-            // Publish shadowjar
-            artifact reobfShadowJar
-            // Publish source jar
             artifact sourceJar {
                 classifier "sources"
             }
