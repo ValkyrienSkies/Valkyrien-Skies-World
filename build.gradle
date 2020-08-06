@@ -110,7 +110,17 @@ publishing {
                 }
             }
         }
+        if (project.hasProperty("daporkchopMavenUsername") && project.hasProperty("daporkchopMavenPassword")) {
+            maven {
+                credentials {
+                    username = "$daporkchopMavenUsername"
+                    password = "$daporkchopMavenPassword"
+                }
 
+                name = "DaPorkchop_"
+                url = "https://maven.daporkchop.net/snapshot/"
+            }
+        }
     }
     publications {
         maven(MavenPublication) {
