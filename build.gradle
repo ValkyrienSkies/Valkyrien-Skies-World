@@ -68,7 +68,9 @@ shadowJar {
     // other mods that might use kotlin
     relocate 'kotlin', 'org.valkyrienskies.addons.world.deps.kotlin'
     relocate 'jetbrains', 'org.valkyrienskies.addons.world.deps.jetbrains'
+    relocate 'org.jetbrains', 'org.valkyrienskies.addons.world.deps.org.jetbrains'
     relocate 'intellij', 'org.valkyrienskies.addons.world.deps.intellij'
+    relocate 'org.intellij', 'org.valkyrienskies.addons.world.deps.org.intellij'
     mergeServiceFiles() // https://github.com/johnrengelman/shadow/issues/304
 }
 
@@ -77,7 +79,8 @@ reobf {
 }
 
 // https://forums.spongepowered.org/t/mcp-reobfuscation-doesnt-work/21779
-tasks.build.dependsOn reobfShadowJar
+tasks.shadowJar.finalizedBy reobfShadowJar
+
 
 reobf.jar {
     mappingType = "SEARGE"
@@ -95,14 +98,19 @@ jar {
 
 publishing {
     repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/ValkyrienSkies/vs-world")
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+        def ghpUser = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+        def ghpPassword = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+        if (ghpUser != null && ghpPassword != null) {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/ValkyrienSkies/vs-world")
+                credentials {
+                    username = ghpUser
+                    password = ghpPassword
+                }
             }
         }
+
     }
     publications {
         maven(MavenPublication) {
