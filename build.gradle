@@ -122,7 +122,7 @@ publishing {
         maven(MavenPublication) {
             groupId = "org.valkyrienskies.addon"
             artifactId = "vs-world"
-            version = project.version
+            version = project.version + "-SNAPSHOT"
 
             from components.java
             artifact sourceJar {
