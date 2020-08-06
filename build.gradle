@@ -16,7 +16,7 @@ plugins {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = 'git rev-parse HEAD'.execute().text.substring(0, 10) // git hash
+version = "1.0.0." + ('git rev-list master.. --count'.execute().text)
 group = "org.valkyrienskies.addon"
 archivesBaseName = "vs-world"
 
@@ -52,9 +52,7 @@ configurations {
 
 dependencies {
     // The mod depends on Valkyrien Skies
-    deobfCompile("org.valkyrienskies:Valkyrien-Skies:4ceb3621") {
-        transitive = false
-    }
+    deobfCompile "org.valkyrienskies:Valkyrien-Skies:d2946e0"
     shade "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72"
 }
 
@@ -128,10 +126,12 @@ publishing {
             artifactId = "vs-world"
             version = project.version
 
-            from components.java
-            // Publish shadowjar
-            artifact shadowJar
-            // Publish source jar
+            artifact jar {
+                classifier null
+            }
+            artifact shadowJar {
+                classifier "all"
+            }
             artifact sourceJar {
                 classifier "sources"
             }
