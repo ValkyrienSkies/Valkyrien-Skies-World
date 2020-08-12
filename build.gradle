@@ -106,7 +106,7 @@ publishing {
         if (ghpUser != null && ghpPassword != null) {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/ValkyrienSkies/vs-world")
+                url = uri("https://maven.pkg.github.com/ValkyrienSkies/Valkyrien-Skies-World")
                 credentials {
                     username = ghpUser
                     password = ghpPassword
