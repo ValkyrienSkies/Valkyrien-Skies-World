@@ -28,7 +28,9 @@ import org.valkyrienskies.addon.world.worldgen.ValkyrienSkiesWorldGen
 import org.valkyrienskies.mod.common.ValkyrienSkiesMod
 import java.util.*
 
-@Mod(name = ValkyrienSkiesWorld.MOD_NAME, modid = ValkyrienSkiesWorld.MOD_ID, version = ValkyrienSkiesWorld.MOD_VERSION, dependencies = "required-after:" + ValkyrienSkiesMod.MOD_ID)
+@Mod(modid = ValkyrienSkiesWorld.MOD_ID,
+    useMetadata = true,
+    dependencies = "required-after:" + ValkyrienSkiesMod.MOD_ID)
 @EventBusSubscriber(modid = ValkyrienSkiesWorld.MOD_ID)
 class ValkyrienSkiesWorld {
     lateinit var valkyriumOre: Block
