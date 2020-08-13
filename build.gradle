@@ -16,7 +16,8 @@ plugins {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.0.0." + ('git rev-list --count HEAD'.execute().text.trim())
+// For now just set the version to be the first 10 characters of the git hash
+version = 'git rev-parse HEAD'.execute().text.substring(0, 10) // git hash  // "1.0.0." + ('git rev-list --count HEAD'.execute().text.trim())
 group = "org.valkyrienskies.addon"
 archivesBaseName = "vs-world"
 
