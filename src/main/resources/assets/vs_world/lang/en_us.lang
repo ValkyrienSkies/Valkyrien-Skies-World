@@ -1,3 +1,13 @@
+# Items
+item.valkyrium_crystal.name=Valkyrium Crystal
+tooltip.vs_world.valkyrium_crystal=Holding too much will make you levitate.
+
+# Blocks
+tile.valkyrium_ore.name=Valkyrium Ore
+tooltip.vs_world.valkyrium_ore_1=A mysterious floating ore.
+tooltip.vs_world.valkyrium_ore_2=Holding too much will make you levitate.
+
+# Other Stuff
 potion.effect.levitation=Alazu's Wrath
 splash_potion.effect.levitation=Splash Alazu's Wrath
 lingering_potion.effect.levitation=Lingering Alazu's Wrath
