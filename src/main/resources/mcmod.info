@@ -5,7 +5,6 @@
     "description": "World Generation for Valkyrien Skies",
     "version": "${version}",
     "logoFile": "",
-    "parent": "valkyrienskies",
     "screenshots": [],
     "dependencies": [
       "valkyrienskies"
