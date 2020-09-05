@@ -27,10 +27,10 @@ public class VSWorldConfig extends VSConfigTemplate {
     public static double valkyriumOreForce = 4D;
 
     @Config.Comment({
-            "When true valkyrium items and potions will levitate entities.",
-            "When false they will not levitate entities."
+            "When true valkyrium items add upwards force to players holding them",
+            "When false they won't."
     })
-    public static boolean doValkyriumLifting = true;
+    public static boolean valkyriumItemsLiftPlayers = true;
 
     /**
      * Synchronizes the data in this class and the data in the forge configuration
