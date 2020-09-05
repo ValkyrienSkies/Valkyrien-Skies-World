@@ -9,6 +9,7 @@ import org.valkyrienskies.addon.world.ItemValkyriumCrystal
 import org.valkyrienskies.addon.world.PotionInit
 import org.valkyrienskies.addon.world.ValkyrienSkiesWorld
 import org.valkyrienskies.addon.world.block.BlockValkyriumOre
+import org.valkyrienskies.addon.world.config.VSWorldConfig
 import org.valkyrienskies.mod.common.config.VSConfig
 
 class LevitationUtil {
@@ -24,26 +25,32 @@ class LevitationUtil {
                     val itemStack = entity.item
                     val capability = itemStack.getCapability(ValkyrienSkiesWorld.ANTI_GRAVITY_CAPABILITY, null)
                     if (capability != null) {
-                        if (capability.multiplier != 0.0) {
-                            entity.addVelocity(0.0, .08, 0.0)
-                        }
+                        entity.addVelocity(0.0, .08 * capability.multiplier, 0.0)
                     }
                 } else if (entity is EntityLivingBase) {
                     if (entity is EntityPlayer) {
                         // Add levitation based on player inventory
-                        if (VSConfig.doValkyriumLifting && !entity.isCreative) {
+                        if (VSWorldConfig.doValkyriumLifting && !entity.isCreative) {
+                            var addedUpVelocity = 0.0
                             for (stackArray in entity.inventory.allInventories) {
                                 for (stack in stackArray) {
                                     if (stack != null) {
                                         if (stack.getItem() is ItemBlock) {
                                             val blockItem = stack.getItem() as ItemBlock
                                             if (blockItem.block is BlockValkyriumOre) {
-                                                entity.addVelocity(0.0, .00025 * stack.stackSize * VSConfig.valkyriumOreForce, 0.0)
+                                                addedUpVelocity += .00025 * stack.stackSize * VSWorldConfig.valkyriumOreForce
                                             }
                                         } else if (stack.getItem() is ItemValkyriumCrystal) {
-                                            entity.addVelocity(0.0, .00025 * stack.stackSize * VSConfig.valkyriumCrystalForce, 0.0)
+                                            addedUpVelocity += .00025 * stack.stackSize * VSWorldConfig.valkyriumCrystalForce
                                         }
                                     }
+                                }
+                            }
+                            if (addedUpVelocity > 0) {
+                                entity.addVelocity(0.0, addedUpVelocity, 0.0)
+                                // Reset fall damage if its big enough
+                                if (addedUpVelocity > .05) {
+                                    entity.fallDistance = 0F
                                 }
                             }
                         }

@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent
 import org.valkyrienskies.addon.world.block.BlockValkyriumOre
 import org.valkyrienskies.addon.world.capability.AntiGravityCapabilityProvider
+import org.valkyrienskies.addon.world.config.VSWorldConfig
 import org.valkyrienskies.addon.world.util.LevitationUtil
 import org.valkyrienskies.mod.common.config.VSConfig
 
@@ -21,14 +22,14 @@ class WorldEventsCommon {
         if (item is ItemValkyriumCrystal) {
             event.addCapability(
                     ResourceLocation(ValkyrienSkiesWorld.MOD_ID, "levitation_strength_capability"),
-                    AntiGravityCapabilityProvider(VSConfig.valkyriumCrystalForce))
+                    AntiGravityCapabilityProvider(1.0))
         }
         if (stack.getItem() is ItemBlock) {
             val blockItem = stack.getItem() as ItemBlock
             if (blockItem.block is BlockValkyriumOre) {
                 event.addCapability(
                         ResourceLocation(ValkyrienSkiesWorld.MOD_ID, "levitation_strength_capability"),
-                        AntiGravityCapabilityProvider(VSConfig.valkyriumOreForce))
+                        AntiGravityCapabilityProvider(1.0))
             }
         }
     }

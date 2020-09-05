@@ -23,6 +23,7 @@ import org.valkyrienskies.addon.world.block.BlockValkyriumOre
 import org.valkyrienskies.addon.world.capability.ICapabilityAntiGravity
 import org.valkyrienskies.addon.world.capability.ImplCapabilityAntiGravity
 import org.valkyrienskies.addon.world.capability.StorageAntiGravity
+import org.valkyrienskies.addon.world.config.VSWorldConfig
 import org.valkyrienskies.addon.world.proxy.CommonProxyWorld
 import org.valkyrienskies.addon.world.worldgen.ValkyrienSkiesWorldGen
 import org.valkyrienskies.mod.common.ValkyrienSkiesMod
@@ -38,6 +39,9 @@ class ValkyrienSkiesWorld {
 
     @Mod.EventHandler
     private fun preInit(event: FMLPreInitializationEvent) {
+        log.debug("Initializing configuration.")
+        runConfiguration()
+
         registerCapabilities()
         proxy.preInit(event)
     }
@@ -60,6 +64,13 @@ class ValkyrienSkiesWorld {
 
     private fun registerCapabilities() {
         CapabilityManager.INSTANCE.register(ICapabilityAntiGravity::class.java, StorageAntiGravity()) { ImplCapabilityAntiGravity() }
+    }
+
+    /**
+     * Initializes the configuration - [VSWorldConfig]
+     */
+    private fun runConfiguration() {
+        VSWorldConfig.sync()
     }
 
     companion object {

@@ -10,13 +10,13 @@ class StorageAntiGravity : IStorage<ICapabilityAntiGravity> {
     override fun writeNBT(capability: Capability<ICapabilityAntiGravity>,
                           instance: ICapabilityAntiGravity,
                           side: EnumFacing?): NBTBase? {
-        return NBTTagDouble(instance.antiGravity)
+        return NBTTagDouble(instance.multiplier)
     }
 
     override fun readNBT(capability: Capability<ICapabilityAntiGravity>,
                          instance: ICapabilityAntiGravity, side: EnumFacing?,
                          nbt: NBTBase) {
         val tagDouble = nbt as NBTTagDouble
-        instance.antiGravity = tagDouble.double
+        instance.multiplier = tagDouble.double
     }
 }
