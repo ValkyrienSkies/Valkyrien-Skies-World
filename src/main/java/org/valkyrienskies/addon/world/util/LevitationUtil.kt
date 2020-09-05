@@ -10,7 +10,6 @@ import org.valkyrienskies.addon.world.PotionInit
 import org.valkyrienskies.addon.world.ValkyrienSkiesWorld
 import org.valkyrienskies.addon.world.block.BlockValkyriumOre
 import org.valkyrienskies.addon.world.config.VSWorldConfig
-import org.valkyrienskies.mod.common.config.VSConfig
 
 class LevitationUtil {
 
@@ -30,7 +29,7 @@ class LevitationUtil {
                 } else if (entity is EntityLivingBase) {
                     if (entity is EntityPlayer) {
                         // Add levitation based on player inventory
-                        if (VSWorldConfig.doValkyriumLifting && !entity.isCreative) {
+                        if (VSWorldConfig.valkyriumItemsLiftPlayers && !entity.isCreative) {
                             var addedUpVelocity = 0.0
                             for (stackArray in entity.inventory.allInventories) {
                                 for (stack in stackArray) {
