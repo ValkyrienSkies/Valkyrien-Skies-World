@@ -2,10 +2,12 @@
 item.valkyrium_crystal.name=Valkyrium Crystal
 tooltip.vs_world.valkyrium_crystal=Holding too much will make you levitate.
 
+
 # Blocks
 tile.valkyrium_ore.name=Valkyrium Ore
 tooltip.vs_world.valkyrium_ore_1=A mysterious floating ore.
 tooltip.vs_world.valkyrium_ore_2=Holding too much will make you levitate.
+
 
 # Other Stuff
 potion.effect.levitation=Alazu's Wrath
@@ -17,3 +19,14 @@ splash_potion.effect.levitation-jump=Splash Levitation Jump
 lingering_potion.effect.levitation-jump=Lingering Levitation Jump
 
 effect.levitation-jump=Levitation Jump
+
+
+# Config
+vs_world.general.valkyriumitemsliftplayers=Enable Valkyrium Item Lift Force
+vs_world.general.valkyriumitemsliftplayers.tooltip=When true valkyrium items add upwards force to players holding them. When false they won't.
+
+vs_world.general.valkyriumcrystalforce=Valkyrium Crystal Anti-Gravity Force
+vs_world.general.valkyriumcrystalforce.tooltip=Default is 1. Set to 0 to disable.
+
+vs_world.general.valkyriumoreforce=Valkyrium Ore Anti-Gravity Force
+vs_world.general.valkyriumoreforce.tooltip=Default is 4. Set to 0 to disable.
