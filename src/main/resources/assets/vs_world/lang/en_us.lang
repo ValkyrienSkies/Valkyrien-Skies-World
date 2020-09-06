@@ -21,7 +21,7 @@ lingering_potion.effect.levitation-jump=Lingering Levitation Jump
 effect.levitation-jump=Levitation Jump
 
 
-# Config
+# Config (Remember to update VSWorldConfig after any changes are made here)
 vs_world.general.valkyriumitemsliftplayers=Enable Valkyrium Item Lift Force
 vs_world.general.valkyriumitemsliftplayers.tooltip=When true valkyrium items add upwards force to players holding them. When false they won't.
 
