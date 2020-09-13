@@ -1,6 +1,7 @@
 package org.valkyrienskies.addon.world
 
 import net.minecraft.block.Block
+import net.minecraft.command.ServerCommandManager
 import net.minecraft.item.Item
 import net.minecraft.potion.Potion
 import net.minecraft.potion.PotionType
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.SidedProxy
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 import net.minecraftforge.fml.common.registry.EntityRegistry
 import net.minecraftforge.fml.common.registry.GameRegistry
@@ -27,6 +29,7 @@ import org.valkyrienskies.addon.world.config.VSWorldConfig
 import org.valkyrienskies.addon.world.proxy.CommonProxyWorld
 import org.valkyrienskies.addon.world.worldgen.ValkyrienSkiesWorldGen
 import org.valkyrienskies.mod.common.ValkyrienSkiesMod
+import org.valkyrienskies.mod.common.command.config.VSConfigCommandBase
 import java.util.*
 
 @Mod(modid = ValkyrienSkiesWorld.MOD_ID,
@@ -49,10 +52,10 @@ class ValkyrienSkiesWorld {
     @Mod.EventHandler
     private fun init(event: FMLInitializationEvent) {
         EntityRegistry.registerModEntity(
-                ResourceLocation(MOD_ID, "fall_up_block_entity"),
-                EntityFallingUpBlock::class.java,
-                "fall_up_block_entity",
-                75, INSTANCE, 80, 1, true)
+            ResourceLocation(MOD_ID, "fall_up_block_entity"),
+            EntityFallingUpBlock::class.java,
+            "fall_up_block_entity",
+            75, INSTANCE, 80, 1, true)
         GameRegistry.registerWorldGenerator(ValkyrienSkiesWorldGen(), 1)
         proxy.init(event)
     }
@@ -60,6 +63,12 @@ class ValkyrienSkiesWorld {
     @Mod.EventHandler
     fun postInit(event: FMLPostInitializationEvent) {
         proxy.postInit(event)
+    }
+
+    @Mod.EventHandler
+    fun serverStart(event: FMLServerStartingEvent) {
+        val manager: ServerCommandManager = event.getServer().getCommandManager() as ServerCommandManager
+        manager.registerCommand(VSConfigCommandBase("vsworldconfig", VSWorldConfig::class.java))
     }
 
     private fun registerCapabilities() {
@@ -91,8 +100,8 @@ class ValkyrienSkiesWorld {
         lateinit var INSTANCE: ValkyrienSkiesWorld
 
         @SidedProxy(
-                clientSide = "org.valkyrienskies.addon.world.proxy.ClientProxyWorld",
-                serverSide = "org.valkyrienskies.addon.world.proxy.CommonProxyWorld"
+            clientSide = "org.valkyrienskies.addon.world.proxy.ClientProxyWorld",
+            serverSide = "org.valkyrienskies.addon.world.proxy.CommonProxyWorld"
         )
         @JvmStatic
         private lateinit var proxy: CommonProxyWorld
