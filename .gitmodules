@@ -1,0 +1,3 @@
+[submodule "src/main/resources/assets/vs_world/lang"]
+	path = src/main/resources/assets/vs_world/lang
+	url = https://github.com/ValkyrienSkies/vs-translations/
