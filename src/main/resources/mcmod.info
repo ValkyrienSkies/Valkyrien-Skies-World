@@ -2,9 +2,10 @@
   {
     "modid": "vs_world",
     "name": "Valkyrien Skies World",
-    "description": "World Generation for Valkyrien Skies",
+    "description": "World Generation for Valkyrien Skies.",
     "version": "${version}",
-    "logoFile": "",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/valkyrien-skies-world",
+    "logoFile": "vs_logo.png",
     "screenshots": [],
     "dependencies": [
       "valkyrienskies"
