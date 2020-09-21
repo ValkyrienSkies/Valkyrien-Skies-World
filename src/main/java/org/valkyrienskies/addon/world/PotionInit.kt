@@ -11,8 +11,8 @@ import net.minecraftforge.event.RegistryEvent
 class PotionInit {
 
     companion object {
-        private const val LEVITATION_POTION_NAME = "levitation"
-        private const val LEVITATION_JUMP_POTION_NAME = "levitation-jump"
+        private const val LEVITATION_POTION_NAME = "valkyrium-levitation"
+        private const val LEVITATION_JUMP_POTION_NAME = "valkyrium-levitation-jump"
 
         val LEVITATION_POTION_EFFECT = VSWorldPotion(false, 8360, LEVITATION_POTION_NAME)
         // A potion that has 1 second of very strong levitation, followed by 9 seconds of weak levitation

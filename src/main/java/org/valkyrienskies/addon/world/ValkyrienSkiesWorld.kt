@@ -91,8 +91,6 @@ class ValkyrienSkiesWorld {
 
         // MOD INFO CONSTANTS
         const val MOD_ID = "vs_world"
-        const val MOD_NAME = "Valkyrien Skies World"
-        const val MOD_VERSION = ValkyrienSkiesMod.MOD_VERSION
 
         // MOD INSTANCE
         @Mod.Instance(MOD_ID)
