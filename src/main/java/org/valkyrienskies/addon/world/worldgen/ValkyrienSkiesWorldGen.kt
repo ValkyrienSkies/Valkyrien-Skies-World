@@ -8,6 +8,7 @@ import net.minecraft.world.gen.feature.WorldGenMinable
 import net.minecraft.world.gen.feature.WorldGenerator
 import net.minecraftforge.fml.common.IWorldGenerator
 import org.valkyrienskies.addon.world.ValkyrienSkiesWorld
+import org.valkyrienskies.addon.world.config.VSWorldConfig
 import java.util.*
 
 /**
@@ -19,7 +20,7 @@ class ValkyrienSkiesWorldGen : IWorldGenerator {
 
     override fun generate(random: Random, chunkX: Int, chunkZ: Int, world: World,
                           chunkGenerator: IChunkGenerator, chunkProvider: IChunkProvider) {
-        if (ValkyrienSkiesWorld.OREGEN_ENABLED) {
+        if (VSWorldConfig.valkyriumOreGenEnabled) {
             if (genValkyriumOre == null) {
                 genValkyriumOre = WorldGenMinable(
                         ValkyrienSkiesWorld.INSTANCE.valkyriumOre.defaultState, 8)

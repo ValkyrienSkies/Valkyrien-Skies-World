@@ -28,6 +28,10 @@ public class VSWorldConfig extends VSConfigTemplate {
     @Config.Comment("Default is 4. Set to 0 to disable.")
     public static double valkyriumOreForce = 4;
 
+    @Config.Name("Valkyrium Ore Generation Enabled")
+    @Config.Comment("Default is true. Set to false to disable.")
+    public static boolean valkyriumOreGenEnabled = true;
+
     /**
      * Synchronizes the data in this class and the data in the forge configuration
      */

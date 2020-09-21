@@ -108,9 +108,6 @@ class ValkyrienSkiesWorld {
         @JvmStatic
         lateinit var ANTI_GRAVITY_CAPABILITY: Capability<ICapabilityAntiGravity>
 
-        // MOD CLASS MEMBERS
-        var OREGEN_ENABLED = true
-
         @SubscribeEvent
         @JvmStatic
         fun registerBlocks(event: RegistryEvent.Register<Block?>) {
