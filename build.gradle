@@ -62,7 +62,7 @@ configurations {
 dependencies {
     // The mod depends on Valkyrien Skies
     // I'm being lazy so I'll just use jitpack for now
-    deobfCompile("org.valkyrienskies:Valkyrien-Skies:43248b11cb2926ae7d21124d1f9a9b6385c9796d:all") {
+    deobfCompile("org.valkyrienskies:Valkyrien-Skies:a0f34224656094fb04cca27f21b701912aefaac5:all") {
         transitive = false
     }
 
